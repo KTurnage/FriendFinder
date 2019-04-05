@@ -1,6 +1,7 @@
 // Loading Data: linking to friends.js.
 var friends = require("../data/friends");
 
+
 // ROUTING
 module.exports = function(app) {
 
