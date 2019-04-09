@@ -18,6 +18,18 @@
             <center>Friend Finder Survey</center>
         </h1>
         <hr>
+
+        <form>
+            <div class="form-group">
+              <label for="name">Your Name Here</label>
+              <input type="text" class="form-control" id="name" placeholder="Your Name">
+            </div>
+            <div class="form-group">
+              <label for="photo">Your Photo Here</label>
+              <input type="text" class="form-control" id="photo" placeholder="image">
+            </div>
+          </form>
+
         <h2>
             <center>Answer each question on a scale of 1-5.<br>
                 1 being strongly disagree, 5 being strongly agree.<br>
@@ -36,7 +48,7 @@
         <hr>
 
         <h4>2. People are the worst.</h4>
-        <select data placeholder="" class="chosen-select" id="q1">
+        <select data placeholder="" class="chosen-select" id="q2">
             <option value=""></option>
             <option value="1"> 1</option>
             <option value="2"> 2</option>
@@ -48,7 +60,7 @@
         </select>
         <h4>3. Sushi is your favorite food.</h4>
 
-        <select data placeholder="" class="chosen-select" id="q1">
+        <select data placeholder="" class="chosen-select" id="q3">
             <option value=""></option>
             <option value="1"> 1</option>
             <option value="2"> 2</option>
@@ -60,7 +72,7 @@
 
         <h4>4. Blue is your favorite color.</h4>
 
-        <select data placeholder="" class="chosen-select" id="q1">
+        <select data placeholder="" class="chosen-select" id="q4">
             <option value=""></option>
             <option value="1"> 1</option>
             <option value="2"> 2</option>
@@ -72,7 +84,7 @@
 
         <h4>5. You love to travel.</h4>
 
-        <select data placeholder="" class="chosen-select" id="q1">
+        <select data placeholder="" class="chosen-select" id="q5">
             <option value=""></option>
             <option value="1"> 1</option>
             <option value="2"> 2</option>
@@ -84,7 +96,7 @@
 
         <h4>6. Hawaii is your favorite place.</h4>
 
-        <select data placeholder="" class="chosen-select" id="q1">
+        <select data placeholder="" class="chosen-select" id="q6">
             <option value=""></option>
             <option value="1"> 1</option>
             <option value="2"> 2</option>
@@ -96,7 +108,7 @@
 
         <h4>7. You appreciate people to are direct.</h4>
 
-        <select data placeholder="" class="chosen-select" id="q1">
+        <select data placeholder="" class="chosen-select" id="q7">
             <option value=""></option>
             <option value="1"> 1</option>
             <option value="2"> 2</option>
@@ -108,7 +120,7 @@
 
         <h4>8. You prefer small groups.</h4>
 
-        <select data placeholder="" class="chosen-select" id="q1">
+        <select data placeholder="" class="chosen-select" id="q8">
             <option value=""></option>
             <option value="1"> 1</option>
             <option value="2"> 2</option>
@@ -120,7 +132,7 @@
 
         <h4>9. You like having deep and meaningful conversations.</h4>
 
-        <select data placeholder="" class="chosen-select" id="q1">
+        <select data placeholder="" class="chosen-select" id="q9">
             <option value=""></option>
             <option value="1"> 1</option>
             <option value="2"> 2</option>
@@ -132,7 +144,7 @@
 
         <h4>10. You like to ride motorcycles.</h4>
 
-        <select data placeholder="" class="chosen-select" id="q1">
+        <select data placeholder="" class="chosen-select" id="q10">
             <option value=""></option>
             <option value="1"> 1</option>
             <option value="2"> 2</option>
@@ -142,22 +154,19 @@
         </select>
         <hr>
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+        <button type="button" id="submitbutton" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
             Find Your Friend </button>
 
         <!-- Modal -->
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalCenterTitle">Your Best Friend Match</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                        <h5 class="modal-title" >Your Best Friend Match</h5>
+                        <span aria-hidden="true" id="friendname"></span>
                     </div>
                     <div class="modal-body">
-                        ...
+                        <img src = "" id="friendImage">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -165,5 +174,39 @@
                 </div>
             </div>
         </div>
-    </body>
-</html>
+        <script type=text/javascript> 
+        // $('#submitbutton').on('shown.bs.modal', function () { $('#myInput').trigger('focus') })
+        $("#submitbutton").on("click", function (event) {
+            event.preventDefault();
+            var userScore = {
+                name: $("#name").val().trim(),
+                photo: $("#photo").val().trim(),
+                score: [
+                    $("#q1").val().trim(),
+                    $("#q2").val().trim(),
+                    $("#q3").val().trim(),
+                    $("#q4").val().trim(),
+                    $("#q5").val().trim(),
+                    $("#q6").val().trim(),
+                    $("#q7").val().trim(),
+                    $("#q8").val().trim(),
+                    $("#q9").val().trim(),
+                    $("#q10").val().trim(),
+                ]
+            }
+            console.log("check name, photo, score", userScore);
+            $.ajax({
+                method: "POST",
+                url: "/api/friends",
+                data: JSON.stringify(userScore),
+                contentType: "application/json",
+                success: function (response) {
+                    $("#friendname").text(response.name);
+                    $("#friendImage").attr("src", response.photo);
+                }
+            })
+
+        })
+            </script> 
+            </body> 
+            </html>

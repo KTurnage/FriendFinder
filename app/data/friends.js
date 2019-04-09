@@ -1,6 +1,6 @@
 var friendsArray = [
     {
-        name: "Jennifer Anniston 'Rachel'",
+        name: "Jennifer Anniston 'Rachel'",// "./images/  " for images instead of https.
         photo: "https://www.google.com/search?sa=X&biw=1431&bih=680&q=Jennifer+Aniston&stick=H4sIAAAAAAAAAONgFuLQz9U3MDZIrlACsywrizK0xLKTrfRLyoAovqAoP70oMdcqObG45BGjL7fAyx_3hKVcJq05eY3RjguHQiEVLjbXvJLMkkohKS4eKbgVGgxSXFxwHs8iVp60oszUvJRiBZAuAMWTvYmNAAAA&ved=0ahUKEwi0t_jJyLfhAhVF0oMKHRKYCxkQ-BYILDA4",
         scores: [5, 1, 3, 4, 5, 3, 5, 2, 5, 1]
     },
