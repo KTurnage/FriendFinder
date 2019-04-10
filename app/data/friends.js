@@ -1,12 +1,12 @@
 var friendsArray = [
     {
-        name: "Jennifer Aniston 'Rachel'",// "./images/  " for images instead of https.
+        name: "Jennifer Aniston 'Rachel'",
         photo: "../public/images/Rachel.jpeg",
         scores: [5, 1, 3, 4, 5, 3, 5, 2, 5, 1]
     },
     {
         name: "Matthew Perry 'Chandler'",
-        photo: "https://www.google.com/search?sa=X&biw=1431&bih=680&q=Matthew+Perry&stick=H4sIAAAAAAAAAONgFuLQz9U3MDZIrlDiBLEMMyqKTbTEspOt9EvKgCi-oCg_vSgx1yo5sbjkEaMvt8DLH_eEpVwmrTl5jdGOC4dCIRUuNte8ksySSiEpLh4puB0aDFJcXHAezyJWnrSizNS8lGIFkC4A_ByaB44AAAA&ved=0ahUKEwi0t_jJyLfhAhVF0oMKHRKYCxkQ-BYILzA5",
+        photo: "./public/images/Chandler.jpeg",
         scores: [4, 1, 2, 4, 5, 1, 5, 2, 4, 1]
     },
     {
@@ -46,7 +46,7 @@ var friendsArray = [
     },
     {
         name: "Larry Hankin 'Mr. Heckles'",
-        photo: "https://www.google.com/search?sa=X&biw=1431&bih=680&q=Larry+Hankin&stick=H4sIAAAAAAAAAONgFuLQz9U3MDZIrlDiBLEyDOLNcrXEspOt9EvKgCi-oCg_vSgx1yo5sbjkEaMvt8DLH_eEpVwmrTl5jdGOC4dCIRUuNte8ksySSiEpLh4puB0aDFJcXHAezyJWnrSizNS8lGIFkC4Ak0uPT44AAAA&ved=0ahUKEwi0t_jJyLfhAhVF0oMKHRKYCxkQ-BYIpAEwYA",
+        photo: "../public/images/mrHeckles.jpeg",
         scores: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     }
 
