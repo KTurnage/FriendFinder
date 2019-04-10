@@ -46,7 +46,7 @@ var friendsArray = [
     },
     {
         name: "Larry Hankin 'Mr. Heckles'",
-        photo: "../public/images/mrHeckles.jpeg",
+        photo: "./public/images/mrHeckles.jpeg",
         scores: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     }
 
