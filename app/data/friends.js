@@ -1,7 +1,7 @@
 var friendsArray = [
     {
         name: "Jennifer Aniston 'Rachel'",
-        photo: "../public/images/Rachel.jpeg",
+        photo: "/images/Rachel.jpeg",
         scores: [5, 1, 3, 4, 5, 3, 5, 2, 5, 1]
     },
     {
@@ -46,7 +46,7 @@ var friendsArray = [
     },
     {
         name: "Larry Hankin 'Mr. Heckles'",
-        photo: "./public/images/mrHeckles.jpeg",
+        photo: "/images/mrHeckles.jpeg",
         scores: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     }
 
