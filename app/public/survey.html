@@ -166,7 +166,7 @@
                         <span aria-hidden="true" id="friendname"></span>
                     </div>
                     <div class="modal-body">
-                        <img src = "" id="friendImage">
+                        <img id="friendImage" src = "" alt="">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -180,7 +180,7 @@
             event.preventDefault();
             var userScore = {
                 name: $("#name").val().trim(),
-                photo: $("#photo").val().trim(),
+                photo: $("#photo").val(),
                 score: [
                     $("#q1").val().trim(),
                     $("#q2").val().trim(),
