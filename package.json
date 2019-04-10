@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
+    "heroku": "^7.22.9",
     "intellisense": "0.0.1",
     "path": "^0.12.7"
   },
